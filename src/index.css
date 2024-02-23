@@ -7,13 +7,4 @@ body {
 
 :root {
   --font-family: 'Manrope', sans-serif;
-
-  --gradient-text:radial-gradient(circle at 20% 20%, rgba(147, 0, 0, 1) 0%, rgba(253, 102, 102, 1) 100%);
-  --gradient-bar:radial-gradient(circle at 49% 34%, rgba(210, 67, 68, 1) 0%, rgba(228, 151, 141, 1) 50%, rgba(210, 142, 142, 1) 100%);
-  
-  --color-bg: #ffffff;
-  --color-footer : #680000;
-  --color-blog: #9A0505;
-  --color-text: #272829;
-  --color-subtext: #6F0000;
 }
