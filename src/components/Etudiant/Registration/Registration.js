@@ -68,9 +68,9 @@ const registration =()=>{
                                 </Field>
         
                                 <Field 
-                                    helperText={<ErrorMessage name="blood"></ErrorMessage>}
+                                    helperText={<ErrorMessage name="Prenom"></ErrorMessage>}
                                     as ={TextField}
-                                    name="blood"
+                                    name="Prenom"
                                     label=' Prenom'
                                     placeholder="Entrer votre prenom"
                                     fullWidth
@@ -78,9 +78,9 @@ const registration =()=>{
                                 </Field>
         
                                 <Field 
-                                    helperText={<ErrorMessage name="age"></ErrorMessage>}
+                                    helperText={<ErrorMessage name="CIN"></ErrorMessage>}
                                     as ={TextField}
-                                    name="age"
+                                    name="CIN"
                                     label='CIN'
                                     placeholder="Enter votre cin"
                                     fullWidth

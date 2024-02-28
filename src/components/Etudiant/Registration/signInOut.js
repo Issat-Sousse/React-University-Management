@@ -43,8 +43,8 @@ const signInOut =()=>{
         scrollButtons="auto"
         aria-label="scrollable auto tabs example"
       >
-        <Tab label="Login" />
-        <Tab label="Registration" />
+        <Tab label="Connexion" />
+        <Tab label="Inscription" />
       </Tabs>
       <TabPanel value={value} index={0}>
         <Login handleChange={handleChange}></Login>
