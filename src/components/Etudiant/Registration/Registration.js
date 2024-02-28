@@ -48,9 +48,9 @@ const registration =()=>{
         <Grid>
             <Paper elevation={20} style={paperStyle}>
                 <Grid align='center'>
-                    <Avatar style={{ backgroundColor: '#D20000', color: '#fff' }}><AccountBoxOutlinedIcon></AccountBoxOutlinedIcon></Avatar>
-                    <h2 style={headerStyle}>Registration</h2>
-                    <Typography gutterBottom variant="caption">Please fill this form to create an account</Typography>
+                    <Avatar style={{ backgroundColor: '#1976D2', color: '#fff' }}><AccountBoxOutlinedIcon></AccountBoxOutlinedIcon></Avatar>
+                    <h2 style={headerStyle}>Inscription</h2>
+                    <Typography gutterBottom variant="caption">veuillez remplir ce formulaire pour s'inscrire</Typography>
                     <Formik 
                     initialValues={initialValues}
                     onSubmit={onSubmit}
@@ -61,8 +61,8 @@ const registration =()=>{
                                     helperText={<ErrorMessage name="name"></ErrorMessage>} 
                                     as ={TextField}
                                     name="name"
-                                    label='Name'
-                                    placeholder="Enter your name"
+                                    label='Nom'
+                                    placeholder="Entrer votre nom"
                                     fullWidth
                                     required>
                                 </Field>
@@ -71,8 +71,8 @@ const registration =()=>{
                                     helperText={<ErrorMessage name="blood"></ErrorMessage>}
                                     as ={TextField}
                                     name="blood"
-                                    label='Blood Type'
-                                    placeholder="Enter your blood type"
+                                    label=' Prenom'
+                                    placeholder="Entrer votre prenom"
                                     fullWidth
                                     required>
                                 </Field>
@@ -81,14 +81,68 @@ const registration =()=>{
                                     helperText={<ErrorMessage name="age"></ErrorMessage>}
                                     as ={TextField}
                                     name="age"
-                                    label='Age'
-                                    placeholder="Enter your age"
+                                    label='CIN'
+                                    placeholder="Enter votre cin"
                                     fullWidth
                                     required>
                                 </Field>
+                                <Field
+                                    helperText={<ErrorMessage name="Date de naissance"></ErrorMessage>}
+                                    as ={TextField} 
+                                    name="Date de naissance"
+                                    label='Date de naissance'
+                                    placeholder="Entrer votre Date de naissance"
+                                    fullWidth
+                                    required
+                                    type="Date de naissance">
+                                </Field>
+                               
+                                
+                                <Field
+                                    helperText={<ErrorMessage name="Lieu e naissance"></ErrorMessage>}
+                                    as ={TextField} 
+                                    name="lieu e naissance"
+                                    label='Lieu de naissance'
+                                    placeholder="Entrer votre lieu de naissance"
+                                    fullWidth
+                                    required
+                                    type="lieu de naissance">
+                                </Field>
+                                <Field
+                                    helperText={<ErrorMessage name="Nationalité"></ErrorMessage>}
+                                    as ={TextField} 
+                                    name="Nationalité"
+                                    label='Nationalité'
+                                    placeholder="Entrer votre Nationalité"
+                                    fullWidth
+                                    required
+                                    type="Nationalité">
+                                </Field>
+
+                                <Field
+                                    helperText={<ErrorMessage name="Specialité"></ErrorMessage>}
+                                    as ={TextField} 
+                                    name="Specialité"
+                                    label='Specialité'
+                                    placeholder="Entrer votre Specialité"
+                                    fullWidth
+                                    required
+                                    type="Specialité">
+                                </Field>
+                                <Field
+                                    helperText={<ErrorMessage name="Grade"></ErrorMessage>}
+                                    as ={TextField} 
+                                    name="Grade"
+                                    label='Grade'
+                                    placeholder="Entrer votre Grade"
+                                    fullWidth
+                                    required
+                                    type="Grade">
+                                </Field>
+                                
         
                                 <FormControl style={{marginTop:5}} align='left'>
-                                    <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+                                    <FormLabel id="demo-radio-buttons-group-label">Genre</FormLabel>
                                     <Field
                                         helperText={<ErrorMessage name="gender"></ErrorMessage>}
                                         as={RadioGroup}
@@ -96,8 +150,8 @@ const registration =()=>{
                                         defaultValue="female"
                                         name="gender"
                                         style={{display:'initial'}}>
-                                        <FormControlLabel value="female" control={<Radio style={{ color: '#D20000' }} />} label="Female" />
-                                        <FormControlLabel value="male" control={<Radio style={{ color: '#D20000' }} />} label="Male" />
+                                        <FormControlLabel value="female" control={<Radio style={{ color: '#1976D2' }} />} label="Feminin" />
+                                        <FormControlLabel value="male" control={<Radio style={{ color: '#1976D2' }} />} label="Masculin" />
                                     </Field>
                                 </FormControl>
                                 <FormHelperText><ErrorMessage name="gender"></ErrorMessage></FormHelperText>
@@ -117,8 +171,8 @@ const registration =()=>{
                                     helperText={<ErrorMessage name="phone"></ErrorMessage>}
                                     as ={TextField}
                                     name="phone"
-                                    label='Phone Number'
-                                    placeholder="Enter your phone number"
+                                    label='Tel'
+                                    placeholder="entrer votre numero de telephone"
                                     fullWidth
                                     required>
                                 </Field>
@@ -127,8 +181,8 @@ const registration =()=>{
                                     helperText={<ErrorMessage name="password"></ErrorMessage>}
                                     as ={TextField} 
                                     name="password"
-                                    label='Password'
-                                    placeholder="Enter your password"
+                                    label='Mot de Passe'
+                                    placeholder="Entrer votre mot de passe"
                                     fullWidth
                                     required
                                     type="password">
@@ -137,11 +191,11 @@ const registration =()=>{
                                 <FormGroup>
                                     <FormControlLabel control={<Field 
                                     as={Checkbox} 
-                                    style={{ color: '#D20000' }}
+                                    style={{ color: '#1976D2' }}
                                     name="terms" 
                                     defaultChecked
                                     helperText={<ErrorMessage name="terms"></ErrorMessage>} />} 
-                                    label="I accept the terms and conditions." />
+                                    label="J'accepte les termes et les conditions." />
                                 </FormGroup> 
                                 <FormHelperText><ErrorMessage name="terms"></ErrorMessage></FormHelperText>
 
@@ -150,9 +204,9 @@ const registration =()=>{
                                 fullWidth 
                                 variant="contained" 
                                 className="button"
-                                style={{ backgroundColor: '#D20000' }}
+                                style={{ backgroundColor: '#1976D2' }}
                                 disabled={props.isSubmitting}>
-                                {props.isSubmitting?"Loading":"Register"}
+                                {props.isSubmitting?"Loading":"Envoyer"}
                                 </Button>
     
                             </form>

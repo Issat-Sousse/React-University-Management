@@ -8,7 +8,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 
-const login = (handleChange) => {
+const Connexion = (handleChange) => {
     const navigateTo = useNavigate();
     const initialValues = {
         username: '',
@@ -34,8 +34,8 @@ const login = (handleChange) => {
     return (
         <Grid>
             <Paper elevation={20} className="Login" style={{ margin: "10% auto", padding: "20px", width: "300px", textAlign: "center" }}>
-                <Avatar style={{ backgroundColor: '#D20000', margin: "0 auto", marginTop: "20px" }}><LockOpenIcon /></Avatar>
-                <h2 style={{ color: "black" }}>Sign in</h2>
+                <Avatar style={{ backgroundColor: '#1976D2', margin: "0 auto", marginTop: "20px" }}><LockOpenIcon /></Avatar>
+                <h2 style={{ color: "black" }}>Connexion</h2>
                 <Formik
                     initialValues={initialValues}
                     onSubmit={onSubmit}
@@ -47,8 +47,8 @@ const login = (handleChange) => {
                                 helperText={<ErrorMessage name="username" />}
                                 as={TextField}
                                 name='username'
-                                label='Username'
-                                placeholder="Enter username"
+                                label='Nom'
+                                placeholder="Entrer votre nom"
                                 fullWidth
                                 required
                             />
@@ -56,8 +56,8 @@ const login = (handleChange) => {
                                 helperText={<ErrorMessage name="password" />}
                                 as={TextField}
                                 name='password'
-                                label='Password'
-                                placeholder="Enter password"
+                                label='Mot de Passe'
+                                placeholder="Entrer votre mot de passe"
                                 fullWidth
                                 required
                                 type="password"
@@ -67,8 +67,8 @@ const login = (handleChange) => {
                                     as={Checkbox}
                                     name='remember'
                                     defaultChecked
-                                    style={{ color: "#D20000" }}
-                                />} label={<span style={{ color: "#D20000" }}>Remember me</span>} />
+                                    style={{ color: "#1976D2" }}
+                                />} label={<span style={{ color: "#1976D2" }}> me rappeler</span>} />
                             </FormGroup>
                             <Button
                                 type="submit"
@@ -77,20 +77,20 @@ const login = (handleChange) => {
                                 variant="contained"
                                 className="button"
                                 disabled={props.isSubmitting}
-                                style={{ backgroundColor: "#D20000" }}
+                                style={{ backgroundColor: "#1976D2" }}
                             >
-                                {props.isSubmitting ? "Loading" : "Sign In"}
+                                {props.isSubmitting ? "Loading" : "Connecter"}
                             </Button>
                         </Form>
                     )}
                 </Formik>
                 <Typography>
-                    <Link href="#" style={{ color: "#D20000", borderBottom: "none" }}>Forgot Password?</Link>
+                    <Link href="#" style={{ color: "#1976D2", borderBottom: "none" }}>Mot de passe oublié?</Link>
                 </Typography>
                 <Typography>
-                    Do you have an account?{' '}
-                    <Link href="#" style={{ color: "#D20000"}}>
-                        Register Now
+                    Vous avez deja un compte??{' '}
+                    <Link href="#" style={{ color: "#1976D2"}}>
+                        connecter d'ici
                     </Link>
                 </Typography>
             </Paper>
@@ -98,4 +98,4 @@ const login = (handleChange) => {
     );
 };
 
-export default login;
+export default Connexion;
