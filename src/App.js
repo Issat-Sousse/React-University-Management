@@ -7,7 +7,7 @@ import Calendar from './components/Global/CalendarEvents';
 import Bibliotheque from './components/Global/Bibliotheque';
 import EmploisEtudiant from './components/Global/Emplois';
 import Actualites from './components/Global/Actualites';
-import Profil from './components/Global/Profil';
+import Profil from './components/Global/Profil/Profil';
 
 import PresenceEtudiant from './components/Etudiant/Dashboard/Presence/Presence';
 import NoteEtudiant from './components/Etudiant/Dashboard/Note/Note';

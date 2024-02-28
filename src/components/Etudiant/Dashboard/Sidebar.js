@@ -95,11 +95,13 @@ const Sidebar = () => {
                     {!isCollapsed && (
                         <Box mb="25px">
                             <Box textAlign="center">
-                                <img
-                                    src="../../../Assets/logoIssat.png"
-                                    alt="ISSATSO"
-                                    style={{ width: '100%', maxWidth: '200px', margin: '10px 0 0 0' }}
-                                />
+                            <Typography
+                                    variant="h4"
+                                    fontWeight="bold"
+                                    color="white"
+                                    sx={{ m: "10px 0 0 0" }}
+                                >Etudiant</Typography>
+
                             </Box>
                         </Box>
                     )}
