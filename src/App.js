@@ -11,7 +11,7 @@ import Profil from './components/Global/Profil/Profil';
 
 import PresenceEtudiant from './components/Etudiant/Dashboard/Presence/Presence';
 import NoteEtudiant from './components/Etudiant/Dashboard/Note/Note';
-import CoursEtudiant from './components/Etudiant/Dashboard/Cours/Cours';
+import DashboardCoursEtudiant from './components/Etudiant/Dashboard/Cours/DashboardCoursEtudiant';
 import VieEstudiantine from './components/Etudiant/Dashboard/VieEstudiantine/VieEstudiantine';
 import AuthEtudiant from './components/Etudiant/Registration/AuthEtudiant'
 import DashboardEtudiant from './components/Etudiant/Dashboard/Dashboard';
@@ -29,6 +29,7 @@ import GestionEmploi from './components/Admin/Dashboard/GestionEmploi/GestionEmp
 import GestionNote from './components/Admin/Dashboard/GestionNote/GestionNote';
 import GestionPresence from './components/Admin/Dashboard/GestionPresence/GestionPresence';
 import GestionProfil from './components/Admin/Dashboard/GestionProfil/GestionProfil';
+import DashboardCours from './components/Etudiant/Dashboard/Cours/DashboardCoursEtudiant';
 
 
 
@@ -44,7 +45,7 @@ class App extends Component {
               <Route path='/dashboardEtudiant' Component={DashboardEtudiant}></Route>
               <Route path='/presenceEtudiant' Component={PresenceEtudiant}></Route>
               <Route path='/noteEtudiant' Component={NoteEtudiant}></Route>
-              <Route path='/coursEtudiant' Component={CoursEtudiant}></Route>
+              <Route path='/coursEtudiant' Component={DashboardCoursEtudiant}></Route>
               <Route path='/vieEstudiantine' Component={VieEstudiantine}></Route>
 
               {/*Etudiant et enseignant*/}
