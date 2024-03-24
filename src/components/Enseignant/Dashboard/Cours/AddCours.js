@@ -27,7 +27,7 @@ const VisuallyHiddenInput = styled("input")({
   whiteSpace: "nowrap",
   width: 1,
 });
-function Cours() {
+function AddCours() {
   const [matiere, setMatiere] = useState("");
   const [filiere, setFilière] = useState("");
   const [type, setType] = useState("");
@@ -172,4 +172,4 @@ function Cours() {
   );
 }
 
-export default Cours;
+export default AddCours;
