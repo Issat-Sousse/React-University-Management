@@ -18,6 +18,7 @@ import DashboardEtudiant from "./components/Etudiant/Dashboard/Dashboard";
 
 import PresenceEnseignant from "./components/Enseignant/Dashboard/Presence/Presence";
 import CoursEnseignant from "./components/Enseignant/Dashboard/Cours/AddCours";
+import ListeCoursEnseignant from "./components/Enseignant/Dashboard/Cours/CoursListe";
 import DashboardEnseignant from "./components/Enseignant/Dashboard/Dashboard";
 
 import DashboardAdmin from "./components/Admin/Dashboard/Dashboard";
@@ -29,7 +30,7 @@ import GestionEmploi from "./components/Admin/Dashboard/GestionEmploi/GestionEmp
 import GestionNote from "./components/Admin/Dashboard/GestionNote/GestionNote";
 import GestionPresence from "./components/Admin/Dashboard/GestionPresence/GestionPresence";
 import GestionProfil from "./components/Admin/Dashboard/GestionProfil/GestionProfil";
-import Cours from "./components/Enseignant/Dashboard/Cours/Cours";
+import Cours from "./components/Enseignant/Dashboard/Cours/CoursListe";
 
 class App extends Component {
   render() {
@@ -68,6 +69,11 @@ class App extends Component {
               Component={PresenceEnseignant}
             ></Route>
             <Route path="/coursEnseignant" Component={CoursEnseignant}></Route>
+            <Route
+              path="/listeCoursEnseignant"
+              Component={ListeCoursEnseignant}
+            ></Route>
+
             {/*Admin */}
             <Route path="/dashboardAdmin" Component={DashboardAdmin}></Route>
             <Route path="/GestionActualites" Component={GestionAct}></Route>

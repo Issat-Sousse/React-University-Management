@@ -96,9 +96,9 @@ function AddCours() {
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
-                  <MenuItem value={10}>Twenty</MenuItem>
-                  <MenuItem value={21}>Twenty one</MenuItem>
-                  <MenuItem value={22}>Twenty one and a half</MenuItem>
+                  <MenuItem value={10}>Mini projet</MenuItem>
+                  <MenuItem value={21}>e-commerce</MenuItem>
+                  <MenuItem value={22}>entrepot de données</MenuItem>
                 </Select>
               </FormControl>
               <FormControl sx={{ m: 1, minWidth: 100, marginRight: "70px" }}>
@@ -114,9 +114,9 @@ function AddCours() {
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
-                  <MenuItem value={10}>Twenty</MenuItem>
-                  <MenuItem value={21}>Twenty one</MenuItem>
-                  <MenuItem value={22}>Twenty one and a half</MenuItem>
+                  <MenuItem value={10}>ING-A2-01</MenuItem>
+                  <MenuItem value={21}>ING-A2-02</MenuItem>
+                  <MenuItem value={22}>ING-A2-03</MenuItem>
                 </Select>
               </FormControl>
 
@@ -133,9 +133,9 @@ function AddCours() {
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
-                  <MenuItem value={10}>Twenty</MenuItem>
-                  <MenuItem value={21}>Twenty one</MenuItem>
-                  <MenuItem value={22}>Twenty one and a half</MenuItem>
+                  <MenuItem value={10}>Cours</MenuItem>
+                  <MenuItem value={21}>TD</MenuItem>
+                  <MenuItem value={22}>TP</MenuItem>
                 </Select>
               </FormControl>
             </Box>
