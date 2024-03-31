@@ -1,223 +1,314 @@
 import React from "react";
-import { Avatar,Grid, Paper, TextField, Typography, Button } from "@mui/material";
+import { Avatar, Grid, Paper, TextField, Typography, Button } from "@mui/material";
 import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import Checkbox from '@mui/material/Checkbox';
-import FormGroup from '@mui/material/FormGroup';
-import {Formik,Field,ErrorMessage} from 'formik';
+import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import {FormHelperText} from '@mui/material';
 
 
-const registration =()=>{
-    const paperStyle= {padding: 20 , width:300, margin:"0 auto"}
-    const headerStyle={margin:'0'}
-    const initialValues={
-        name:'',
-        blood:'',
-        age:'',
-        gender:'',
-        email:'',
-        phone:'',
-        password:'',
-        terms:false
+const Registration = () => {
+    const paperStyle = { padding: 20, width: 500, margin: "0 auto" }
+    const headerStyle = { margin: '0' }
+    const fieldStyle = { marginBottom: '20px' } // Déclaration de fieldStyle
+    const initialValues = {
+        role: '',
+        name: '',
+        prenom: '',
+        cin: '',
+        dateNaissance: '',
+        lieuNaissance: '',
+        nationalite: '',
+        specialite: '',
+        grade: '',
+        situation: '',
+        diplome: '',
+        genre: '',
+        email: '',
+        tel: '',
+        password: ''
     }
-    const onSubmit=(values, props)=>{
+    const onSubmit = (values, props) => {
         console.log(values);
         console.log(props);
-        setTimeout(()=>{
+        setTimeout(() => {
             props.resetForm();
             props.setSubmitting(false);
-        },2000)
+        }, 2000)
     }
-    const validationSchema=Yup.object().shape({
-        name:Yup.string().min(3,"It's too short").required("Required"),
-        blood:Yup.string().oneOf(["a+","A+","b+","B+","o+","O+","AB+","ab+","a-","A-","b-","B-","o-","O-","AB-","ab-"],"Enter a valid tybe blood").required("Required"),
-        age:Yup.number().typeError("Enter a valid age").required("Required"),
-        gender:Yup.string().oneOf(["male", "female"],"Choose an appropiate gender").required("Required"),
-        email:Yup.string().email("Enter a valid email").required("Required"),
-        phone:Yup.number().typeError("Enter a valid phone number").required("Required"),
-        password:Yup.string().min(8,"Password minimum length should be 8").required("Required"),
-        terms:Yup.string().oneOf(["true"],"Accept terms and conditions")
+    const validationSchema = Yup.object().shape({
+        role: Yup.string().required("Choisissez un rôle"),
+        name: Yup.string().min(3, "It's too short").required("Required"),
+        prenom: Yup.string().min(3, "It's too short").required("Required"),
+        cin: Yup.string().required("Required"),
+        dateNaissance: Yup.date().required("Required"),
+        lieuNaissance: Yup.string().required("Required"),
+        nationalite: Yup.string().required("Required"),
+        specialite: Yup.string().required("Required"),
+        grade: Yup.string().required("Required"),
+        situation: Yup.string().required("Required"),
+        diplome: Yup.string().required("Required"),
+        genre: Yup.string().required("Required"),
+        email: Yup.string().email("Enter a valid email").required("Required"),
+        tel: Yup.string().required("Required"),
+        password: Yup.string().min(8, "Password minimum length should be 8").required("Required")
     })
-    return(
+
+    return (
         <Grid>
             <Paper elevation={20} style={paperStyle}>
                 <Grid align='center'>
-                    <Avatar style={{ backgroundColor: '#1976D2', color: '#fff' }}><AccountBoxOutlinedIcon></AccountBoxOutlinedIcon></Avatar>
+                    <Avatar style={{ backgroundColor: '#1976D2', color: '#fff' }}><AccountBoxOutlinedIcon /></Avatar>
                     <h2 style={headerStyle}>Inscription</h2>
-                    <Typography gutterBottom variant="caption">veuillez remplir ce formulaire pour s'inscrire</Typography>
-                    <Formik 
-                    initialValues={initialValues}
-                    onSubmit={onSubmit}
-                    validationSchema={validationSchema}>
-                        {(props)=>(
-                            <form>
-                                <Field
-                                    helperText={<ErrorMessage name="name"></ErrorMessage>} 
-                                    as ={TextField}
-                                    name="name"
-                                    label='Nom'
-                                    placeholder="Entrer votre nom"
-                                    fullWidth
-                                    required>
-                                </Field>
-        
-                                <Field 
-                                    helperText={<ErrorMessage name="Prenom"></ErrorMessage>}
-                                    as ={TextField}
-                                    name="Prenom"
-                                    label=' Prenom'
-                                    placeholder="Entrer votre prenom"
-                                    fullWidth
-                                    required>
-                                </Field>
-        
-                                <Field 
-                                    helperText={<ErrorMessage name="CIN"></ErrorMessage>}
-                                    as ={TextField}
-                                    name="CIN"
-                                    label='CIN'
-                                    placeholder="Enter votre cin"
-                                    fullWidth
-                                    required>
-                                </Field>
-                                <Field
-                                    helperText={<ErrorMessage name="Date de naissance"></ErrorMessage>}
-                                    as ={TextField} 
-                                    name="Date de naissance"
-                                    label='Date de naissance'
-                                    placeholder="Entrer votre Date de naissance"
-                                    fullWidth
-                                    required
-                                    type="Date de naissance">
-                                </Field>
-                               
-                                
-                                <Field
-                                    helperText={<ErrorMessage name="Lieu e naissance"></ErrorMessage>}
-                                    as ={TextField} 
-                                    name="lieu e naissance"
-                                    label='Lieu de naissance'
-                                    placeholder="Entrer votre lieu de naissance"
-                                    fullWidth
-                                    required
-                                    type="lieu de naissance">
-                                </Field>
-                                <Field
-                                    helperText={<ErrorMessage name="Nationalité"></ErrorMessage>}
-                                    as ={TextField} 
-                                    name="Nationalité"
-                                    label='Nationalité'
-                                    placeholder="Entrer votre Nationalité"
-                                    fullWidth
-                                    required
-                                    type="Nationalité">
-                                </Field>
-
-                                <Field
-                                    helperText={<ErrorMessage name="Specialité"></ErrorMessage>}
-                                    as ={TextField} 
-                                    name="Specialité"
-                                    label='Specialité'
-                                    placeholder="Entrer votre Specialité"
-                                    fullWidth
-                                    required
-                                    type="Specialité">
-                                </Field>
-                                <Field
-                                    helperText={<ErrorMessage name="Grade"></ErrorMessage>}
-                                    as ={TextField} 
-                                    name="Grade"
-                                    label='Grade'
-                                    placeholder="Entrer votre Grade"
-                                    fullWidth
-                                    required
-                                    type="Grade">
-                                </Field>
-                                
-        
-                                <FormControl style={{marginTop:5}} align='left'>
-                                    <FormLabel id="demo-radio-buttons-group-label">Genre</FormLabel>
-                                    <Field
-                                        helperText={<ErrorMessage name="gender"></ErrorMessage>}
-                                        as={RadioGroup}
-                                        aria-labelledby="demo-radio-buttons-group-label"
-                                        defaultValue="female"
-                                        name="gender"
-                                        style={{display:'initial'}}>
-                                        <FormControlLabel value="female" control={<Radio style={{ color: '#1976D2' }} />} label="Feminin" />
-                                        <FormControlLabel value="male" control={<Radio style={{ color: '#1976D2' }} />} label="Masculin" />
-                                    </Field>
+                    <Typography gutterBottom variant="caption">Veuillez remplir ce formulaire pour vous inscrire</Typography>
+                    <Formik
+                        initialValues={initialValues}
+                        onSubmit={onSubmit}
+                        validationSchema={validationSchema}>
+                        {(props) => (
+                            <form onSubmit={props.handleSubmit}>
+                                <FormControl component="fieldset">
+                                    <FormLabel component="legend">Rôle</FormLabel>
+                                    <RadioGroup
+                                        aria-label="role"
+                                        name="role"
+                                        value={props.values.role}
+                                        onChange={props.handleChange}>
+                                        <FormControlLabel value="etudiant" control={<Radio />} label="Étudiant" />
+                                        <FormControlLabel value="enseignant" control={<Radio />} label="Enseignant" />
+                                    </RadioGroup>
+                                    <ErrorMessage name="role" component="div" style={{ color: 'red' }} />
                                 </FormControl>
-                                <FormHelperText><ErrorMessage name="gender"></ErrorMessage></FormHelperText>
 
-                                <Field 
-                                    helperText={<ErrorMessage name="email"></ErrorMessage>}
-                                    as ={TextField}
+                                {props.values.role === "etudiant" && (
+                                    <React.Fragment>
+                                        <Field
+                                            as={TextField}
+                                            name="name"
+                                            label='Nom'
+                                            placeholder="Entrer votre nom"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="prenom"
+                                            label='Prénom'
+                                            placeholder="Entrer votre prénom"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                            
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="cin"
+                                            label='CIN'
+                                            placeholder="Entrer votre CIN"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="dateNaissance"
+                                            label='Date de naissance'
+                                            type="date"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="lieuNaissance"
+                                            label='Lieu de naissance'
+                                            placeholder="Entrer votre lieu de naissance"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="nationalite"
+                                            label='Nationalité'
+                                            placeholder="Entrer votre nationalité"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="specialite"
+                                            label='Spécialité'
+                                            placeholder="Entrer votre spécialité"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="diplome"
+                                            label='Diplôme'
+                                            placeholder="Entrer votre diplôme"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="situation"
+                                            label='Situation'
+                                            placeholder="Entrer votre situation"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="genre"
+                                            label='Genre'
+                                            placeholder="Entrer votre genre"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                    </React.Fragment>
+                                )}
+
+                                {props.values.role === "enseignant" && (
+                                    <React.Fragment>
+                                        <Field
+                                            as={TextField}
+                                            name="name"
+                                            label='Nom'
+                                            placeholder="Entrer votre nom"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="prenom"
+                                            label='Prénom'
+                                            placeholder="Entrer votre prénom"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="cin"
+                                            label='CIN'
+                                            placeholder="Entrer votre CIN"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="dateNaissance"
+                                            label='Date de naissance'
+                                            type="date"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="lieuNaissance"
+                                            label='Lieu de naissance'
+                                            placeholder="Entrer votre lieu de naissance"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="nationalite"
+                                            label='Nationalité'
+                                            placeholder="Entrer votre nationalité"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="specialite"
+                                            label='Spécialité'
+                                            placeholder="Entrer votre spécialité"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="grade"
+                                            label='Grade'
+                                            placeholder="Entrer votre grade"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                        <Field
+                                            as={TextField}
+                                            name="genre"
+                                            label='Genre'
+                                            placeholder="Entrer votre genre"
+                                            fullWidth
+                                            required
+                                            style={fieldStyle} // Ajout du style pour les champs
+                                        />
+                                    </React.Fragment>
+                                )}
+
+                                <Field
+                                    as={TextField}
                                     name="email"
                                     label='Email'
-                                    placeholder="Enter your email"
+                                    placeholder="Entrer votre email"
                                     fullWidth
                                     required
-                                    type="email">
-                                </Field>
-        
-                                <Field 
-                                    helperText={<ErrorMessage name="phone"></ErrorMessage>}
-                                    as ={TextField}
-                                    name="phone"
-                                    label='Tel'
-                                    placeholder="entrer votre numero de telephone"
-                                    fullWidth
-                                    required>
-                                </Field>
-        
+                                    style={fieldStyle} // Ajout du style pour les champs
+                                />
                                 <Field
-                                    helperText={<ErrorMessage name="password"></ErrorMessage>}
-                                    as ={TextField} 
-                                    name="password"
-                                    label='Mot de Passe'
-                                    placeholder="Entrer votre mot de passe"
+                                    as={TextField}
+                                    name="tel"
+                                    label='Téléphone'
+                                    placeholder="Entrer votre téléphone"
                                     fullWidth
                                     required
-                                    type="password">
-                                </Field>
-                                
-                                <FormGroup>
-                                    <FormControlLabel control={<Field 
-                                    as={Checkbox} 
-                                    style={{ color: '#1976D2' }}
-                                    name="terms" 
-                                    defaultChecked
-                                    helperText={<ErrorMessage name="terms"></ErrorMessage>} />} 
-                                    label="J'accepte les termes et les conditions." />
-                                </FormGroup> 
-                                <FormHelperText><ErrorMessage name="terms"></ErrorMessage></FormHelperText>
+                                    style={fieldStyle} // Ajout du style pour les champs
+                                />
+                                <Field
+                                    as={TextField}
+                                    name="password"
+                                    label='Mot de passe'
+                                    placeholder="Entrer votre mot de passe"
+                                    type="password"
+                                    fullWidth
+                                    required
+                                    style={fieldStyle} // Ajout du style pour les champs
+                                />
 
-                                <Button 
-                                type="submit" 
-                                fullWidth 
-                                variant="contained" 
-                                className="button"
-                                style={{ backgroundColor: '#1976D2' }}
-                                disabled={props.isSubmitting}>
-                                {props.isSubmitting?"Loading":"Envoyer"}
+                                <Button
+                                    type="submit"
+                                    fullWidth
+                                    variant="contained"
+                                    style={{ backgroundColor: '#1976D2', marginTop: '20px' }}
+                                    disabled={props.isSubmitting}>
+                                    {props.isSubmitting ? "Loading" : "Envoyer"}
                                 </Button>
-    
                             </form>
-
                         )}
                     </Formik>
                 </Grid>
-                       
             </Paper>
         </Grid>
     )
 }
 
-export default registration;
+export default Registration;

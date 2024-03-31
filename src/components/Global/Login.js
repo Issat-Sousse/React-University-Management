@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Connexion = (handleChange) => {
     const navigateTo = useNavigate();
+    const fieldStyle = { marginBottom: '20px' } // Déclaration de fieldStyle
     const initialValues = {
         username: '',
         password: '',
@@ -33,7 +34,8 @@ const Connexion = (handleChange) => {
 
     return (
         <Grid>
-            <Paper elevation={20} className="Login" style={{ margin: "10% auto", padding: "20px", width: "300px", textAlign: "center" }}>
+           <Paper elevation={20} className="Login" style={{ margin: "10% auto", padding: "20px", width: "500px", textAlign: "center" }}>
+
                 <Avatar style={{ backgroundColor: '#1976D2', margin: "0 auto", marginTop: "20px" }}><LockOpenIcon /></Avatar>
                 <h2 style={{ color: "black" }}>Connexion</h2>
                 <Formik
@@ -51,6 +53,8 @@ const Connexion = (handleChange) => {
                                 placeholder="Entrer votre nom"
                                 fullWidth
                                 required
+                                style={fieldStyle} // Ajout du style pour les champs
+                                
                             />
                             <Field
                                 helperText={<ErrorMessage name="password" />}
@@ -61,6 +65,8 @@ const Connexion = (handleChange) => {
                                 fullWidth
                                 required
                                 type="password"
+                                style={fieldStyle} // Ajout du style pour les champs
+                                
                             />
                             <FormGroup>
                                 <FormControlLabel control={<Field
@@ -68,6 +74,7 @@ const Connexion = (handleChange) => {
                                     name='remember'
                                     defaultChecked
                                     style={{ color: "#1976D2" }}
+                                    
                                 />} label={<span style={{ color: "#1976D2" }}> me rappeler</span>} />
                             </FormGroup>
                             <Button
