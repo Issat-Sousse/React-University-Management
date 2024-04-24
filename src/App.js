@@ -15,6 +15,7 @@ import CoursEtudiant from "./components/Etudiant/Dashboard/Cours/DashboardCoursE
 import VieEstudiantine from "./components/Etudiant/Dashboard/VieEstudiantine/VieEstudiantine";
 import AuthEtudiant from "./components/Etudiant/Registration/AuthEtudiant";
 import DashboardEtudiant from "./components/Etudiant/Dashboard/Dashboard";
+import ListeCours from "./components/Etudiant/Dashboard/Cours/ListeCours";
 
 import PresenceEnseignant from "./components/Enseignant/Dashboard/Presence/Presence";
 import CoursEnseignant from "./components/Enseignant/Dashboard/Cours/AddCours";
@@ -30,7 +31,7 @@ import GestionEmploi from "./components/Admin/Dashboard/GestionEmploi/GestionEmp
 import GestionNote from "./components/Admin/Dashboard/GestionNote/GestionNote";
 import GestionPresence from "./components/Admin/Dashboard/GestionPresence/GestionPresence";
 import GestionProfil from "./components/Admin/Dashboard/GestionProfil/GestionProfil";
-import Cours from "./components/Enseignant/Dashboard/Cours/CoursListe";
+
 
 class App extends Component {
   render() {
@@ -40,17 +41,12 @@ class App extends Component {
           <Routes>
             {/*Etudiant */}
             <Route path="/" Component={AuthEtudiant}></Route>
-            <Route
-              path="/dashboardEtudiant"
-              Component={DashboardEtudiant}
-            ></Route>
-            <Route
-              path="/presenceEtudiant"
-              Component={PresenceEtudiant}
-            ></Route>
+            <Route path="/dashboardEtudiant" Component={DashboardEtudiant}></Route>
+            <Route path="/presenceEtudiant" Component={PresenceEtudiant}></Route>
             <Route path="/noteEtudiant" Component={NoteEtudiant}></Route>
             <Route path="/coursEtudiant" Component={CoursEtudiant}></Route>
             <Route path="/vieEstudiantine" Component={VieEstudiantine}></Route>
+            <Route path="/cours/:id" Component={ListeCours}></Route>
 
             {/*Etudiant et enseignant*/}
             <Route path="/calendar" Component={Calendar}></Route>
@@ -60,19 +56,10 @@ class App extends Component {
             <Route path="/profil" Component={Profil}></Route>
 
             {/*Enseignant*/}
-            <Route
-              path="/dashboardEnseignant"
-              Component={DashboardEnseignant}
-            ></Route>
-            <Route
-              path="/presenceEnseignant"
-              Component={PresenceEnseignant}
-            ></Route>
+            <Route path="/dashboardEnseignant" Component={DashboardEnseignant}></Route>
+            <Route path="/presenceEnseignant" Component={PresenceEnseignant}></Route>
             <Route path="/coursEnseignant" Component={CoursEnseignant}></Route>
-            <Route
-              path="/listeCoursEnseignant"
-              Component={ListeCoursEnseignant}
-            ></Route>
+            <Route path="/listeCoursEnseignant" Component={ListeCoursEnseignant}></Route>
 
             {/*Admin */}
             <Route path="/dashboardAdmin" Component={DashboardAdmin}></Route>
