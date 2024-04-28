@@ -2,15 +2,8 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
 
 export default function PersonalInformationForm() {
-  const [gender, setGender] = React.useState(''); // Initial state for gender
-
-  const handleChangeGender = (event) => {
-    setGender(event.target.value);
-  };
-
   const handleNumberInput = (event) => {
     // Allow only digits and limit to 8 characters
     const newValue = event.target.value.replace(/[^0-9]/g, '').slice(0, 8);
@@ -33,19 +26,7 @@ export default function PersonalInformationForm() {
         Informations personelles
       </Typography>
       <Grid container spacing={3}>
-        {/* First row: CIN and Name */}
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="CIN"
-            name="CIN"
-            label="CIN"
-            fullWidth
-            defaultValue="12345678" 
-            variant="standard"
-            inputProps={{ maxLength: 8, onInput: handleNumberInput }} // Limit to 8 digits and allow only numbers
-          />
-        </Grid>
+        {/* First row: name and email*/}
         <Grid item xs={12} sm={6}>
           <TextField
             required
@@ -57,9 +38,23 @@ export default function PersonalInformationForm() {
             defaultValue="Sahar Youssef"
           />
         </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            required
+            id="email"
+            name="email"
+            label="Email"
+            fullWidth
+            variant="standard"
+            autoComplete="email"
+            defaultValue="saharyoussef@gmail.com"
+            onBlur={handleEmailInput} // Validation on blur (losing focus)
+          />
+        </Grid>
 
-        {/* Second row: Date et lieu de naissance */}
-        <Grid item xs={12}>
+
+        {/* Second row: Date et lieu de naissance et adresse */}
+        <Grid item xs={12} sm={6}>
           <TextField
             required
             id="dateOfBirth"
@@ -71,37 +66,19 @@ export default function PersonalInformationForm() {
           />
         </Grid>
 
-        {/* Third row: Genre and nationalité, similar to CIN and Name */}
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            select
-            label="Genre"
-            value={gender}
-            onChange={handleChangeGender}
-            sx={{ minWidth: 120 }} // Adjust width as needed
-          >
-            <MenuItem value="">
-              <em>Sélectionnez votre genre</em>
-            </MenuItem>
-            <MenuItem value="male">Masculin</MenuItem>
-            <MenuItem value="female">Féminin</MenuItem>
-          </TextField>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="nationality"
-            name="nationality"
-            label="Nationalité"
+            id="adress"
+            name="adress"
+            label="Adresse"
             fullWidth
             variant="standard"
-            marginLeft={4} 
-            defaultValue="Tunisienne"
+            defaultValue="Sousse"
           />
         </Grid>
 
-        {/* Fourth row: Phone number and email, similar to CIN and Name */}
+        {/* third row: Phone numbers */}
         <Grid item xs={12} sm={6}>
           <TextField
             required
@@ -118,14 +95,14 @@ export default function PersonalInformationForm() {
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id="email"
-            name="email"
-            label="Email"
+            id="phoneNumber"
+            name="phoneNumber"
+            label="2éme Numéro de telephone"
             fullWidth
             variant="standard"
-            autoComplete="email"
-            defaultValue="saharyoussef@gmail.com"
-            onBlur={handleEmailInput} // Validation on blur (losing focus)
+            autoComplete="tel"
+            defaultValue="50789632"
+            inputProps={{ onInput: handleNumberInput }} // Allow only digits
           />
         </Grid>
       </Grid>

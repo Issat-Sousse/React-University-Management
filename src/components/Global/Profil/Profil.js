@@ -9,18 +9,18 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import InfoPersonnelle from './InfoPerso'; 
-import InfoUniversitaire from './InfoUniversitaire'; 
+import Securite from './Securite'; 
 import Topbar from '../Topbar'; 
 import Sidebar from '../../Etudiant/Dashboard/Sidebar'; 
 
-const steps = ['Informations Personnelles', 'Informations Universitaire'];
+const steps = ['Informations Personnelles', 'Sécurité du compte'];
 
 function getStepContent(step) {
   switch (step) {
     case 0:
       return <InfoPersonnelle />;
     case 1:
-      return <InfoUniversitaire />;
+      return <Securite />;
     default:
       throw new Error('Unknown step');
   }
@@ -50,7 +50,7 @@ export default function Profil() {
               width="calc(100% - 25%)"
               height="75vh"
               marginRight="5%"
-              marginTop="4%"
+              marginTop="2%"
               sx={{
                 "& .MuiDataGrid-root": {
                   border: "none",
@@ -73,54 +73,54 @@ export default function Profil() {
                 },
               }}
             >
-              {/* Your content for the profile section can be placed here */}
+              <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+                <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+                  <Typography component="h1" variant="h4" align="center">
+                    {/* Add your profile title here */}
+                  </Typography>
+                  <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+                    {steps.map((label) => (
+                      <Step key={label}>
+                        <StepLabel>{label}</StepLabel>
+                      </Step>
+                    ))}
+                  </Stepper>
+                  {activeStep === steps.length ? (
+                    <React.Fragment>
+                      <Typography variant="h5" gutterBottom>
+                        Modification Réussie.
+                      </Typography>
+                      <Typography variant="subtitle1">
+                        Tu peux trouver tes informations dans ton profil.
+                      </Typography>
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      {getStepContent(activeStep)}
+                      <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        {activeStep !== 0 && (
+                          <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
+                            Précédent
+                          </Button>
+                        )}
+
+                        <Button
+                          variant="contained"
+                          onClick={handleNext}
+                          sx={{ mt: 3, ml: 1 }}
+                        >
+                          {activeStep === steps.length - 1 ? 'Confirmer' : 'Suivant'}
+                        </Button>
+                      </Box>
+                    </React.Fragment>
+                  )}
+                </Paper>
+              </Container>
             </Box>
           </Box>
         </Box>
       </div>
-      <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-        <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-          <Typography component="h1" variant="h4" align="center">
-            {/* Add your profile title here */}
-          </Typography>
-          <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
-            {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          {activeStep === steps.length ? (
-            <React.Fragment>
-              <Typography variant="h5" gutterBottom>
-                Merci pour l'inscription.
-              </Typography>
-              <Typography variant="subtitle1">
-                Tu peux trouver tes informations dans ton profil.
-              </Typography>
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              {getStepContent(activeStep)}
-              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                {activeStep !== 0 && (
-                  <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
-                    Précédent
-                  </Button>
-                )}
-
-                <Button
-                  variant="contained"
-                  onClick={handleNext}
-                  sx={{ mt: 3, ml: 1 }}
-                >
-                  {activeStep === steps.length - 1 ? 'Confirmer' : 'Suivant'}
-                </Button>
-              </Box>
-            </React.Fragment>
-          )}
-        </Paper>
-      </Container>
+      
     </React.Fragment>
   );
 }
