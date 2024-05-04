@@ -13,9 +13,14 @@ import PresenceEtudiant from "./components/Etudiant/Dashboard/Presence/Presence"
 import NoteEtudiant from "./components/Etudiant/Dashboard/Note/Note";
 import CoursEtudiant from "./components/Etudiant/Dashboard/Cours/DashboardCoursEtudiant";
 import VieEstudiantine from "./components/Etudiant/Dashboard/VieEstudiantine/VieEstudiantine";
+import Clubs from "./components/Etudiant/Dashboard/VieEstudiantine/Clubs";
+import Centre4C from "./components/Etudiant/Dashboard/VieEstudiantine/Centre4C";
+import Association from "./components/Etudiant/Dashboard/VieEstudiantine/Association";
+import Incubateur from "./components/Etudiant/Dashboard/VieEstudiantine/Incubateur";
 import AuthEtudiant from "./components/Etudiant/Registration/AuthEtudiant";
 import DashboardEtudiant from "./components/Etudiant/Dashboard/Dashboard";
 import ListeCours from "./components/Etudiant/Dashboard/Cours/ListeCours";
+
 
 import PresenceEnseignant from "./components/Enseignant/Dashboard/Presence/Presence";
 import CoursEnseignant from "./components/Enseignant/Dashboard/Cours/AddCours";
@@ -46,6 +51,10 @@ class App extends Component {
             <Route path="/noteEtudiant" Component={NoteEtudiant}></Route>
             <Route path="/coursEtudiant" Component={CoursEtudiant}></Route>
             <Route path="/vieEstudiantine" Component={VieEstudiantine}></Route>
+            <Route path="/clubs" Component={Clubs}></Route>
+            <Route path="/4c" Component={Centre4C}></Route>
+            <Route path="/association" Component={Association}></Route>
+            <Route path="/incubateur" Component={Incubateur}></Route>
             <Route path="/cours/:id" Component={ListeCours}></Route>
 
             {/*Etudiant et enseignant*/}

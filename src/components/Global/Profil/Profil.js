@@ -46,38 +46,9 @@ export default function Profil() {
           <Box display="flex" flexGrow={1} overflow="auto" style={{ overflowX: "hidden" }}>
             <Sidebar flex="2" />
             <Box marginLeft="25%" />
-            <Box
-              width="calc(100% - 25%)"
-              height="75vh"
-              marginRight="5%"
-              marginTop="2%"
-              sx={{
-                "& .MuiDataGrid-root": {
-                  border: "none",
-                  backgroundColor: "white", 
-                  boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)",
-                },
-                "& .MuiDataGrid-columnHeader": {
-                  backgroundColor: "#1976d2", 
-                  color: "white",
-                },
-                "& .MuiDataGrid-cell": {
-                  borderBottom: "none",
-                },
-                "& .MuiDataGrid-columnHeaderTitle": {
-                  fontWeight: "bold",
-                },
-                "& .MuiDataGrid-virtualScroller": {},
-                "& .MuiDataGrid-footerContainer": {
-                  borderTop: "none",
-                },
-              }}
-            >
+              
               <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
                 <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-                  <Typography component="h1" variant="h4" align="center">
-                    {/* Add your profile title here */}
-                  </Typography>
                   <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
                     {steps.map((label) => (
                       <Step key={label}>
@@ -116,9 +87,10 @@ export default function Profil() {
                   )}
                 </Paper>
               </Container>
+              
             </Box>
           </Box>
-        </Box>
+        
       </div>
       
     </React.Fragment>
