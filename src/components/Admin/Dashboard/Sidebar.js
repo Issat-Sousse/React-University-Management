@@ -137,8 +137,8 @@ const Sidebar = () => {
                             setSelected={setSelected}>
                         </Item>
                         <Item
-                            title="Gestion Clubs"
-                            to="/gestionClub"
+                            title="Gestion Vie Estudiantine"
+                            to="/gestionVieEst"
                             icon={<SportsEsportsOutlinedIcon></SportsEsportsOutlinedIcon>}
                             selected={selected}
                             setSelected={setSelected}>

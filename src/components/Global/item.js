@@ -27,16 +27,16 @@ const StyledItem = styled('div')(({ theme }) => ({
   }));
 
   const Title = styled('h3')(({ theme }) => ({
-    marginBottom: '1em', // Utilisation de 'em' pour l'espacement
-    fontSize: '1.5em', // Taille de police responsive
+    marginBottom: '1rem', // Utilisation de 'em' pour l'espacement
+    fontSize: '1.5rem', // Taille de police responsive
     textTransform: 'uppercase', // Texte en majuscules
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1.5em', // Ajustement de la taille pour les petits écrans
+      fontSize: '1rem', // Ajustement de la taille pour les petits écrans
     },
   }));
 
 const Description = styled('p')({
-  marginBottom: '1em', // Utilisation de 'em' pour l'espacement
+  marginBottom: '1rem', // Utilisation de 'em' pour l'espacement
 });
 
 

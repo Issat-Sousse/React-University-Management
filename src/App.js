@@ -31,7 +31,11 @@ import DashboardAdmin from "./components/Admin/Dashboard/Dashboard";
 import GestionAct from "./components/Admin/Dashboard/GestionAct/GestionAct";
 import GestionBib from "./components/Admin/Dashboard/GestionBib/GestionBib";
 import GestionCalendar from "./components/Admin/Dashboard/GestionCalendar/GestionCalendar";
-import GestionClub from "./components/Admin/Dashboard/GestionClub/GestionClub";
+import GestionVieEst from "./components/Admin/Dashboard/GestionVieEst/GestionVieEst";
+import GestionClub from "./components/Admin/Dashboard/GestionVieEst/GestionClub";
+import GestionAssociation from "./components/Admin/Dashboard/GestionVieEst/GestionAssociation";
+import GestionIncubateur from "./components/Admin/Dashboard/GestionVieEst/GestionIncub";
+import Gestion4C from "./components/Admin/Dashboard/GestionVieEst/Gestion4c";
 import GestionEmploi from "./components/Admin/Dashboard/GestionEmploi/GestionEmploi";
 import GestionNote from "./components/Admin/Dashboard/GestionNote/GestionNote";
 import GestionPresence from "./components/Admin/Dashboard/GestionPresence/GestionPresence";
@@ -75,7 +79,11 @@ class App extends Component {
             <Route path="/GestionActualites" Component={GestionAct}></Route>
             <Route path="/GestionBib" Component={GestionBib}></Route>
             <Route path="/gestionCalendar" Component={GestionCalendar}></Route>
+            <Route path="/gestionVieEst" Component={GestionVieEst}></Route>
             <Route path="/gestionClub" Component={GestionClub}></Route>
+            <Route path="/gestionAssociation" Component={GestionAssociation}></Route>
+            <Route path="/gestionIncubateur" Component={GestionIncubateur}></Route>
+            <Route path="/gestion4C" Component={Gestion4C}></Route>
             <Route path="/gestionEmplois" Component={GestionEmploi}></Route>
             <Route path="/gestionNote" Component={GestionNote}></Route>
             <Route path="/gestionPresence" Component={GestionPresence}></Route>
