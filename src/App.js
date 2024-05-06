@@ -20,7 +20,7 @@ import Incubateur from "./components/Etudiant/Dashboard/VieEstudiantine/Incubate
 import AuthEtudiant from "./components/Etudiant/Registration/AuthEtudiant";
 import DashboardEtudiant from "./components/Etudiant/Dashboard/Dashboard";
 import ListeCours from "./components/Etudiant/Dashboard/Cours/ListeCours";
-
+import StagePfeLaravel from "./components/Etudiant/Dashboard/StagePfeLaravel";
 
 import PresenceEnseignant from "./components/Enseignant/Dashboard/Presence/Presence";
 import CoursEnseignant from "./components/Enseignant/Dashboard/Cours/AddCours";
@@ -37,7 +37,6 @@ import GestionNote from "./components/Admin/Dashboard/GestionNote/GestionNote";
 import GestionPresence from "./components/Admin/Dashboard/GestionPresence/GestionPresence";
 import GestionProfil from "./components/Admin/Dashboard/GestionProfil/GestionProfil";
 
-
 class App extends Component {
   render() {
     return (
@@ -46,8 +45,14 @@ class App extends Component {
           <Routes>
             {/*Etudiant */}
             <Route path="/" Component={AuthEtudiant}></Route>
-            <Route path="/dashboardEtudiant" Component={DashboardEtudiant}></Route>
-            <Route path="/presenceEtudiant" Component={PresenceEtudiant}></Route>
+            <Route
+              path="/dashboardEtudiant"
+              Component={DashboardEtudiant}
+            ></Route>
+            <Route
+              path="/presenceEtudiant"
+              Component={PresenceEtudiant}
+            ></Route>
             <Route path="/noteEtudiant" Component={NoteEtudiant}></Route>
             <Route path="/coursEtudiant" Component={CoursEtudiant}></Route>
             <Route path="/vieEstudiantine" Component={VieEstudiantine}></Route>
@@ -56,7 +61,7 @@ class App extends Component {
             <Route path="/association" Component={Association}></Route>
             <Route path="/incubateur" Component={Incubateur}></Route>
             <Route path="/cours/:id" Component={ListeCours}></Route>
-
+            <Route path="/StagePfeLaravel" Component={StagePfeLaravel}></Route>
             {/*Etudiant et enseignant*/}
             <Route path="/calendar" Component={Calendar}></Route>
             <Route path="/bibliotheque" Component={Bibliotheque}></Route>
@@ -65,10 +70,19 @@ class App extends Component {
             <Route path="/profil" Component={Profil}></Route>
 
             {/*Enseignant*/}
-            <Route path="/dashboardEnseignant" Component={DashboardEnseignant}></Route>
-            <Route path="/presenceEnseignant" Component={PresenceEnseignant}></Route>
+            <Route
+              path="/dashboardEnseignant"
+              Component={DashboardEnseignant}
+            ></Route>
+            <Route
+              path="/presenceEnseignant"
+              Component={PresenceEnseignant}
+            ></Route>
             <Route path="/coursEnseignant" Component={CoursEnseignant}></Route>
-            <Route path="/listeCoursEnseignant" Component={ListeCoursEnseignant}></Route>
+            <Route
+              path="/listeCoursEnseignant"
+              Component={ListeCoursEnseignant}
+            ></Route>
 
             {/*Admin */}
             <Route path="/dashboardAdmin" Component={DashboardAdmin}></Route>
