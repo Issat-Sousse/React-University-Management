@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import Calendar from "./components/Global/CalendarEvents";
 import Bibliotheque from "./components/Global/Bibliotheque";
 import EmploisEtudiant from "./components/Global/Emplois";
-import Actualites from "./components/Global/Actualites";
 import Profil from "./components/Global/Profil/Profil";
 
 import PresenceEtudiant from "./components/Etudiant/Dashboard/Presence/Presence";
@@ -20,13 +19,13 @@ import Incubateur from "./components/Etudiant/Dashboard/VieEstudiantine/Incubate
 import AuthEtudiant from "./components/Etudiant/Registration/AuthEtudiant";
 import DashboardEtudiant from "./components/Etudiant/Dashboard/Dashboard";
 import ListeCours from "./components/Etudiant/Dashboard/Cours/ListeCours";
-
+import ActualitesEtudiant from "./components/Etudiant/Dashboard/ActualitesEtudiant";
 
 import PresenceEnseignant from "./components/Enseignant/Dashboard/Presence/Presence";
 import CoursEnseignant from "./components/Enseignant/Dashboard/Cours/AddCours";
 import ListeCoursEnseignant from "./components/Enseignant/Dashboard/Cours/CoursListe";
 import DashboardEnseignant from "./components/Enseignant/Dashboard/Dashboard";
-
+import ActualitesEnseignant from "./components/Enseignant/Dashboard/ActualitesEnseignant";
 import DashboardAdmin from "./components/Admin/Dashboard/Dashboard";
 import GestionAct from "./components/Admin/Dashboard/GestionAct/GestionAct";
 import GestionBib from "./components/Admin/Dashboard/GestionBib/GestionBib";
@@ -60,12 +59,13 @@ class App extends Component {
             <Route path="/association" Component={Association}></Route>
             <Route path="/incubateur" Component={Incubateur}></Route>
             <Route path="/cours/:id" Component={ListeCours}></Route>
+            <Route path="/actualitesEtudiant" Component={ActualitesEtudiant}></Route>
+
 
             {/*Etudiant et enseignant*/}
             <Route path="/calendar" Component={Calendar}></Route>
             <Route path="/bibliotheque" Component={Bibliotheque}></Route>
             <Route path="/emplois" Component={EmploisEtudiant}></Route>
-            <Route path="/actualites" Component={Actualites}></Route>
             <Route path="/profil" Component={Profil}></Route>
 
             {/*Enseignant*/}
@@ -73,6 +73,7 @@ class App extends Component {
             <Route path="/presenceEnseignant" Component={PresenceEnseignant}></Route>
             <Route path="/coursEnseignant" Component={CoursEnseignant}></Route>
             <Route path="/listeCoursEnseignant" Component={ListeCoursEnseignant}></Route>
+            <Route path="/actualitesEnseignant" Component={ActualitesEnseignant}></Route>
 
             {/*Admin */}
             <Route path="/dashboardAdmin" Component={DashboardAdmin}></Route>

@@ -159,7 +159,7 @@ const Sidebar = () => {
             ></Item>
             <Item
               title="Actualités"
-              to="/actualites"
+              to="/actualitesEnseignant"
               icon={<AnnouncementOutlinedIcon></AnnouncementOutlinedIcon>}
               selected={selected}
               setSelected={setSelected}
