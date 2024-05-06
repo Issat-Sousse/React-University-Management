@@ -21,7 +21,7 @@ export default function GestionVieEst() {
                   <Item
                     title="Gestion des clubs"
                     description=""
-                    buttonText="Découvrir Plus"
+                    buttonText="Gérer"
                     to="/gestionClub"
                   />
                 </Grid>
@@ -29,7 +29,7 @@ export default function GestionVieEst() {
                   <Item
                     title="Gestion du centre 4c"
                     description=""
-                    buttonText="Découvrir Plus"
+                    buttonText="Gérer"
                     to="/gestion4C"
                   />
                 </Grid>
@@ -37,7 +37,7 @@ export default function GestionVieEst() {
                   <Item
                     title="Gestion de l'incubateur"
                     description=""
-                    buttonText="Découvrir Plus"
+                    buttonText="Gérer"
                     to="/gestionIncubateur"
                   />
                 </Grid>
@@ -45,7 +45,7 @@ export default function GestionVieEst() {
                   <Item
                     title="Gestion des associations"
                     description=""
-                    buttonText="Découvrir Plus"
+                    buttonText="Gérer"
                     to="/gestionAssociation"
                   />
                 </Grid>

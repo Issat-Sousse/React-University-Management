@@ -22,12 +22,12 @@ const TemplateEtudiant=()=>{
                     { field: "nom", headerName: "Nom", flex: 1 },
                     { field: "CEO", headerName: "CEO", flex: 1 },
                     { field: "email", headerName: "Email", flex: 1 },
-                    { field: "numtel", headerName: "Numéro de Teléphone", flex: 1 },
                     { field: "date", headerName: "Date de fondation", flex: 1 },
                 ]}
                 rows={[
-                    { id: 1, nom: "NachdIt", CEO: "Ahmed Ben Hssouna", email: "nachdIt@gmail.com", numtel:93108574,date:"15/11/2015" },
+                    { id: 1, nom: "NachdIt", CEO: "Ahmed Ben Hssouna", email: "nachdIt@gmail.com",date:"15/11/2015" },
                 ]}
+                link="/ajouterIncubateur"
             />
                    
             </Box>

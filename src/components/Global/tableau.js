@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Box, Button, IconButton } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { Link } from "react-router-dom";
 
-function tableau({ columns, rows }) {
+
+function tableau({ columns, rows ,link}) {
   const [dataRows, setDataRows] = useState(rows);
 
   const handleDeleteRow = (idToDelete) => {
@@ -27,13 +29,6 @@ function tableau({ columns, rows }) {
     },
   ];
 
-  const handleAddRow = () => {
-    const newRow = {
-      id: dataRows.length + 1,
-      // Ajoutez ici les valeurs par défaut pour les nouvelles lignes
-    };
-    setDataRows([...dataRows, newRow]);
-  };
 
   return (
     <Box
@@ -58,9 +53,9 @@ function tableau({ columns, rows }) {
         marginRight="1rem"
         marginTop="0.4rem"
       >
-        <Button variant="contained" onClick={handleAddRow}>
-          Ajouter un élément
-        </Button>
+        <Link to={link}>
+          <Button variant="contained">Ajouter</Button>
+        </Link>
       </Box>
       <Box
         width="100%"
