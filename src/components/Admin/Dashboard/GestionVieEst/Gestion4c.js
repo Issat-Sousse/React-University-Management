@@ -29,6 +29,7 @@ const TemplateEtudiant=()=>{
                 { id: 3, evenement: "Journée de recrutement", date: "20/07/2022", participants: 100 },
                 { id: 4, evenement: "Journée de startups", date: "10/09/2022", participants: 120 },
               ]}
+              link="/ajouter4C"
           />
 
             

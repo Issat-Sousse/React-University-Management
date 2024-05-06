@@ -39,6 +39,7 @@ const TemplateEtudiant=()=>{
                     { id: 12, nom: "Spark", président: "Aymen Ben Naceur", email: "spark@example.com", date: "03/06/2011" }
                    
                 ]}
+                link="/ajouterClub"
             />
 
                    

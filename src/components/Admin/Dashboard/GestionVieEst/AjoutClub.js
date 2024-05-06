@@ -2,7 +2,8 @@ import React from 'react';
 import Sidebar from '../Sidebar';
 import Topbar from '../../../Global/Topbar';
 import {CssBaseline,Box} from "@mui/material";
-import Tableau from '../../../Global/tableau';
+import Ajout from '../../../Global/Ajout';
+
 
 const TemplateEtudiant=()=>{
 
@@ -16,20 +17,8 @@ const TemplateEtudiant=()=>{
             <Sidebar flex="2" />
             <Box marginLeft="25%" /> 
 
-            <Tableau
-                columns={[
-                  { field: "nom", headerName: "Nom", flex: 1 },
-                  { field: "président", headerName: "président", flex: 1 },
-                  { field: "email", headerName: "Email", flex: 1 },
-                  { field: "date", headerName: "Date de fondation", flex: 1 },
-              ]}
-              rows={[
-                  { id: 1, nom: "ARSSII", président: "Ahmed Maalel", email:"arssii@gmail.com",date: "15/11/2015" },
-                  { id: 2, nom: "ATIA", président: "Farah Barika Ktata", email: "atia@gmail.com", date: "02/04/2010" },
-                 
-              ]}
-              link="/ajouterAssociation"
-          />
+            <Ajout></Ajout>
+
                    
             </Box>
           </Box>

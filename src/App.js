@@ -35,6 +35,10 @@ import GestionClub from "./components/Admin/Dashboard/GestionVieEst/GestionClub"
 import GestionAssociation from "./components/Admin/Dashboard/GestionVieEst/GestionAssociation";
 import GestionIncubateur from "./components/Admin/Dashboard/GestionVieEst/GestionIncub";
 import Gestion4C from "./components/Admin/Dashboard/GestionVieEst/Gestion4c";
+import Ajouter4C from "./components/Admin/Dashboard/GestionVieEst/Ajout4c";
+import AjouterClub from "./components/Admin/Dashboard/GestionVieEst/AjoutClub";
+import AjouterIncubateur from "./components/Admin/Dashboard/GestionVieEst/AjoutIncub";
+import AjouterAssociation from "./components/Admin/Dashboard/GestionVieEst/AjoutAssociation";
 import GestionEmploi from "./components/Admin/Dashboard/GestionEmploi/GestionEmploi";
 import GestionNote from "./components/Admin/Dashboard/GestionNote/GestionNote";
 import GestionPresence from "./components/Admin/Dashboard/GestionPresence/GestionPresence";
@@ -85,6 +89,10 @@ class App extends Component {
             <Route path="/gestionAssociation" Component={GestionAssociation}></Route>
             <Route path="/gestionIncubateur" Component={GestionIncubateur}></Route>
             <Route path="/gestion4C" Component={Gestion4C}></Route>
+            <Route path="/ajouterClub" Component={AjouterClub}></Route>
+            <Route path="/ajouterAssociation" Component={AjouterAssociation}></Route>
+            <Route path="/ajouterIncubateur" Component={AjouterIncubateur}></Route>
+            <Route path="/ajouter4C" Component={Ajouter4C}></Route>
             <Route path="/gestionEmplois" Component={GestionEmploi}></Route>
             <Route path="/gestionNote" Component={GestionNote}></Route>
             <Route path="/gestionPresence" Component={GestionPresence}></Route>
