@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import Calendar from "./components/Global/CalendarEvents";
 import Bibliotheque from "./components/Global/Bibliotheque";
 import EmploisEtudiant from "./components/Global/Emplois";
-import Actualites from "./components/Global/Actualites";
 import Profil from "./components/Global/Profil/Profil";
 
 import PresenceEtudiant from "./components/Etudiant/Dashboard/Presence/Presence";
@@ -20,18 +19,27 @@ import Incubateur from "./components/Etudiant/Dashboard/VieEstudiantine/Incubate
 import AuthEtudiant from "./components/Etudiant/Registration/AuthEtudiant";
 import DashboardEtudiant from "./components/Etudiant/Dashboard/Dashboard";
 import ListeCours from "./components/Etudiant/Dashboard/Cours/ListeCours";
+import ActualitesEtudiant from "./components/Etudiant/Dashboard/ActualitesEtudiant";
 import StagePfeLaravel from "./components/Etudiant/Dashboard/StagePfeLaravel";
 
 import PresenceEnseignant from "./components/Enseignant/Dashboard/Presence/Presence";
 import CoursEnseignant from "./components/Enseignant/Dashboard/Cours/AddCours";
 import ListeCoursEnseignant from "./components/Enseignant/Dashboard/Cours/CoursListe";
 import DashboardEnseignant from "./components/Enseignant/Dashboard/Dashboard";
-
+import ActualitesEnseignant from "./components/Enseignant/Dashboard/ActualitesEnseignant";
 import DashboardAdmin from "./components/Admin/Dashboard/Dashboard";
 import GestionAct from "./components/Admin/Dashboard/GestionAct/GestionAct";
 import GestionBib from "./components/Admin/Dashboard/GestionBib/GestionBib";
 import GestionCalendar from "./components/Admin/Dashboard/GestionCalendar/GestionCalendar";
-import GestionClub from "./components/Admin/Dashboard/GestionClub/GestionClub";
+import GestionVieEst from "./components/Admin/Dashboard/GestionVieEst/GestionVieEst";
+import GestionClub from "./components/Admin/Dashboard/GestionVieEst/GestionClub";
+import GestionAssociation from "./components/Admin/Dashboard/GestionVieEst/GestionAssociation";
+import GestionIncubateur from "./components/Admin/Dashboard/GestionVieEst/GestionIncub";
+import Gestion4C from "./components/Admin/Dashboard/GestionVieEst/Gestion4c";
+import Ajouter4C from "./components/Admin/Dashboard/GestionVieEst/Ajout4c";
+import AjouterClub from "./components/Admin/Dashboard/GestionVieEst/AjoutClub";
+import AjouterIncubateur from "./components/Admin/Dashboard/GestionVieEst/AjoutIncub";
+import AjouterAssociation from "./components/Admin/Dashboard/GestionVieEst/AjoutAssociation";
 import GestionEmploi from "./components/Admin/Dashboard/GestionEmploi/GestionEmploi";
 import GestionNote from "./components/Admin/Dashboard/GestionNote/GestionNote";
 import GestionPresence from "./components/Admin/Dashboard/GestionPresence/GestionPresence";
@@ -62,11 +70,16 @@ class App extends Component {
             <Route path="/incubateur" Component={Incubateur}></Route>
             <Route path="/cours/:id" Component={ListeCours}></Route>
             <Route path="/StagePfeLaravel" Component={StagePfeLaravel}></Route>
+            <Route
+              path="/actualitesEtudiant"
+              Component={ActualitesEtudiant}
+            ></Route>
+
+            <Route path="/StagePfeLaravel" Component={StagePfeLaravel}></Route>
             {/*Etudiant et enseignant*/}
             <Route path="/calendar" Component={Calendar}></Route>
             <Route path="/bibliotheque" Component={Bibliotheque}></Route>
             <Route path="/emplois" Component={EmploisEtudiant}></Route>
-            <Route path="/actualites" Component={Actualites}></Route>
             <Route path="/profil" Component={Profil}></Route>
 
             {/*Enseignant*/}
@@ -83,13 +96,41 @@ class App extends Component {
               path="/listeCoursEnseignant"
               Component={ListeCoursEnseignant}
             ></Route>
+            <Route
+              path="/listeCoursEnseignant"
+              Component={ListeCoursEnseignant}
+            ></Route>
+            <Route
+              path="/actualitesEnseignant"
+              Component={ActualitesEnseignant}
+            ></Route>
 
             {/*Admin */}
             <Route path="/dashboardAdmin" Component={DashboardAdmin}></Route>
             <Route path="/GestionActualites" Component={GestionAct}></Route>
             <Route path="/GestionBib" Component={GestionBib}></Route>
             <Route path="/gestionCalendar" Component={GestionCalendar}></Route>
+            <Route path="/gestionVieEst" Component={GestionVieEst}></Route>
             <Route path="/gestionClub" Component={GestionClub}></Route>
+            <Route
+              path="/gestionAssociation"
+              Component={GestionAssociation}
+            ></Route>
+            <Route
+              path="/gestionIncubateur"
+              Component={GestionIncubateur}
+            ></Route>
+            <Route path="/gestion4C" Component={Gestion4C}></Route>
+            <Route path="/ajouterClub" Component={AjouterClub}></Route>
+            <Route
+              path="/ajouterAssociation"
+              Component={AjouterAssociation}
+            ></Route>
+            <Route
+              path="/ajouterIncubateur"
+              Component={AjouterIncubateur}
+            ></Route>
+            <Route path="/ajouter4C" Component={Ajouter4C}></Route>
             <Route path="/gestionEmplois" Component={GestionEmploi}></Route>
             <Route path="/gestionNote" Component={GestionNote}></Route>
             <Route path="/gestionPresence" Component={GestionPresence}></Route>

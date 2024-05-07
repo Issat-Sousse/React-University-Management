@@ -100,7 +100,7 @@ const Sidebar = () => {
                                     variant="h4"
                                     fontWeight="bold"
                                     color="white"
-                                    sx={{ m: "10px 0 0 0" }}
+                                    sx={{ m: "2 rem 0 0 0" }}
                                 >Admin</Typography>
                             </Box>
                         </Box>
@@ -137,8 +137,8 @@ const Sidebar = () => {
                             setSelected={setSelected}>
                         </Item>
                         <Item
-                            title="Gestion Clubs"
-                            to="/gestionClub"
+                            title="Gestion Vie Estudiantine"
+                            to="/gestionVieEst"
                             icon={<SportsEsportsOutlinedIcon></SportsEsportsOutlinedIcon>}
                             selected={selected}
                             setSelected={setSelected}>
