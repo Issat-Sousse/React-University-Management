@@ -21,7 +21,6 @@ export default function ImagesList({ images }) {
       {images.map((item) => (
         <ImageListItem key={item.img}>
           <img
-            className="images4c"
             src={require(`../../Assets/${item.img}`)}
             alt={item.title}
             loading="lazy"
