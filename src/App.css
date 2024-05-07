@@ -226,3 +226,27 @@ a {
   width: 950px;
   height: 550px;
 }
+
+.cardens {
+  width: 780px;
+  height: 340px;
+  background-color: rgb(213, 227, 244);
+  background: radial-gradient(
+    circle,
+    rgba(213, 227, 244, 1) 41%,
+    rgba(124, 169, 221, 1) 93%
+  );
+  border: 1px solid rgba(124, 169, 221, 1) 93%;
+  border-radius: 50px;
+  text-align: center;
+
+  align-items: center;
+  justify-content: center;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(0);
+  margin: 1.5em;
+  padding: 1.5em;
+  transition: transform 0.3s;
+  margin-top: -50px;
+  margin-right: -150px;
+}
