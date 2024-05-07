@@ -27,7 +27,11 @@ export default function Incubateur() {
           >
             <Sidebar flex="2" />
             <Box marginLeft="25%" />
-            <img src={require(`./4c.png`)} alt="incubateur issatso" />
+            <img
+              className="incubateurimg"
+              src={require(`../../../../Assets/incubateur.png`)}
+              alt="incubateur issatso"
+            />
           </Box>
         </Box>
       </div>

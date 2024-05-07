@@ -218,7 +218,15 @@ a {
   font-weight: bold;
   color: rgba(0, 40, 83, 1);
 }
-
 .items-div {
   margin-left: 10px;
+}
+.images4c {
+  width: 80px;
+  height: 80px;
+}
+
+.incubateurimg {
+  width: 950px;
+  height: 550px;
 }

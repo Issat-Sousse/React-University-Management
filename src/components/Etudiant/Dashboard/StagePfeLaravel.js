@@ -19,16 +19,20 @@ export default function StagePfeLaravel() {
           }}
         >
           <Topbar />
-          <Grid container>
-            <Grid item xs={12} md={4}>
-              <Sidebar flex="2" />
-            </Grid>
+          <Box
+            display="flex"
+            flexGrow={1}
+            overflow="auto"
+            style={{ overflowX: "hidden" }}
+          >
+            <Sidebar flex="2" />
+            <Box marginLeft="25%" />
             <Grid
               container
               rowSpacing={4}
               columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             >
-              <Grid item xs={12}>
+              <Grid item xs={8}>
                 <ItemStage
                   title="Stage PFE"
                   tel="98625548"
@@ -42,7 +46,7 @@ export default function StagePfeLaravel() {
                 />
               </Grid>
             </Grid>
-          </Grid>
+          </Box>
         </Box>
       </div>
     </React.Fragment>
