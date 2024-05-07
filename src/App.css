@@ -250,3 +250,12 @@ a {
   margin-top: -50px;
   margin-right: -150px;
 }
+
+.chart {
+  width: 400px;
+  height: 250px;
+}
+
+.chart3 {
+  margin-left: 150px;
+}
